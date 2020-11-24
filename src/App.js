@@ -1,4 +1,4 @@
-import React from "react";
+import React , {useEffect} from "react";
 import { BrowserRouter, Route } from "react-router-dom";
 import {
   navBar,
@@ -68,7 +68,9 @@ const Home = React.forwardRef((props, ref) => {
 
 const App = () => {
   const titleRef = React.useRef();
-
+  useEffect(() => {
+    document.title = `Yue Chang`;
+  });
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL + "/"}>
       {navBar.show && <Navbar ref={titleRef} />}
